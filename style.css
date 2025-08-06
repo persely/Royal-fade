@@ -209,3 +209,82 @@ section {
     .slogan { font-size: 1.5rem; }
     .service-card { width: 90%; padding: 30px; margin: 20px auto; }
 }
+
+.booking-body {
+  background: linear-gradient(135deg, #1a1a1a, #262626);
+  color: #fff;
+}
+
+.booking-hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+}
+
+.booking-hero h2 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.booking-hero p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.booking-form-section {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.glass-form {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 500px;
+}
+
+.glass-form label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.glass-form input,
+.glass-form select {
+  width: 100%;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.glass-form button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #ffd700;
+  border: none;
+  border-radius: 0.5rem;
+  color: black;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.glass-form button:hover {
+  background-color: #ffcc00;
+}
+
+.footer-quote {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-style: italic;
+  color: #aaa;
+}
