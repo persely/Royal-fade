@@ -93,3 +93,13 @@ testimonialCards.forEach(card => {
         }
     });
 });
+
+window.addEventListener('scroll', () => {
+  const about = document.querySelector('.about-section');
+  const position = about.getBoundingClientRect().top;
+  const screenPosition = window.innerHeight / 1.3;
+
+  if (position < screenPosition) {
+    about.classList.add('active');
+  }
+});
