@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROYAL FADE | Own the Crown</title>
+<style>
+    /* --- Reset & Base --- */
+    * {margin:0;padding:0;box-sizing:border-box;font-family:'Playfair Display', serif;}
+    body {
+        background-color:#FFFFFF;
+        color:#111;
+        overflow-x:hidden;
+    }
+    /* --- Gold Variables --- */
+    :root {
+        --gold: #D4AF37;
+        --gold-hover: #FFD700;
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+        position: relative;
+        height: 100vh;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        overflow:hidden;
+    }
+    .logo {
+        font-size:5rem;
+        font-weight:900;
+        color:var(--gold);
+        opacity:0;
+        animation: fadeIn 2s forwards;
+    }
+    .slogan {
+        font-size:2rem;
+        margin-top:20px;
+        color:var(--gold);
+        opacity:0;
+        animation: fadeIn 3s forwards 1s;
+    }
+    @keyframes fadeIn {
+        to {opacity:1;}
+    }
+
+    /* --- Golden Dust --- */
+    .gold-dust {
+        position:absolute;
+        pointer-events:none;
+        width:8px;
+        height:8px;
+        border-radius:50%;
+        background:var(--gold);
+        opacity:0.8;
+        animation: dustMove 1s forwards;
+    }
+    @keyframes dustMove {
+        to {
+            transform: translate(var(--dx), var(--dy)) scale(0);
+            opacity:0;
+        }
+    }
+
+    /* --- Buttons --- */
+    .cta-btn {
+        margin-top:40px;
+        padding:15px 40px;
+        font-size:1.5rem;
+        font-weight:bold;
+        color:#FFFFFF;
+        background:var(--gold);
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        box-shadow:0 0 20px rgba(212,175,55,0.6);
+        position:relative;
+        overflow:hidden;
+        transition:transform 0.3s, box-shadow 0.3s;
+    }
+    .cta-btn:hover {
+        transform: scale(1.05);
+        box-shadow:0 0 30px rgba(212,175,55,0.9);
+    }
+
+    /* --- Services Section --- */
+    .services {
+        display:flex;
+        justify-content:space-around;
+        align-items:flex-start;
+        padding:100px 20px;
+        flex-wrap:wrap;
+        background-color:#FFFFFF;
+    }
+    .service-card {
+        background-color:#FFFFFF;
+        border:2px solid var(--gold);
+        border-radius:15px;
+        width:300px;
+        padding:30px;
+        margin:20px;
+        text-align:center;
+        transition: transform 0.5s, box-shadow 0.5s;
+        cursor:pointer;
+        position:relative;
+    }
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 30px rgba(212,175,55,0.6);
+    }
+    .service-card h3 {
+        color:var(--gold);
+        font-size:1.8rem;
+        margin-bottom:15px;
+    }
+    .service-card p {
+        color:#111;
+        font-size:1rem;
+    }
+
+    /* --- Testimonials Section --- */
+    .testimonials {
+        padding:100px 20px;
+        text-align:center;
+        background-color:#FFFFFF;
+    }
+    .testimonials h2 {
+        font-size:3rem;
+        color:var(--gold);
+        margin-bottom:50px;
+    }
+    .testimonial-card {
+        max-width:600px;
+        margin:20px auto;
+        font-size:1.2rem;
+        font-style:italic;
+        position:relative;
+        padding:20px;
+        border-left:4px solid var(--gold);
+    }
+
+    /* --- Footer --- */
+    footer {
+        padding:40px 20px;
+        text-align:center;
+        border-top:2px solid var(--gold);
+        color:var(--gold);
+        font-weight:bold;
+    }
+
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="logo">ROYAL FADE</div>
+    <div class="slogan">Own the Crown.</div>
+    <button class="cta-btn" id="claimCrownBtn">Claim Your Crown</button>
+</section>
+
+<!-- Services -->
+<section class="services">
+    <div class="service-card">
+        <h3>Imperial Fade</h3>
+        <p>Full haircut, beard sculpt, scalp therapy at your location.</p>
+    </div>
+    <div class="service-card">
+        <h3>Black Card Membership</h3>
+        <p>Unlimited VIP appointments with your personal grooming concierge.</p>
+    </div>
+    <div class="service-card">
+        <h3>First Cut Experience</h3>
+        <p>Signature welcome experience — your first step into royalty.</p>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+    <h2>Hall of Kings</h2>
+    <div class="testimonial-card">"The crown doesn’t lie. Royal Fade proves it." — Elite Client</div>
+    <div class="testimonial-card">"A fade that commands respect. This is mastery." — Private Client</div>
+</section>
+
+<!-- Footer -->
+<footer>
+    ROYAL FADE — Own the Crown.
+</footer>
+
+<script>
+    // --- Golden Dust Effect ---
+    const btn = document.getElementById('claimCrownBtn');
+    btn.addEventListener('click', (e) => {
+        for(let i=0;i<30;i++){
+            let dust = document.createElement('div');
+            dust.className='gold-dust';
+            dust.style.left = e.clientX+'px';
+            dust.style.top = e.clientY+'px';
+            dust.style.setProperty('--dx',(Math.random()*200-100)+'px');
+            dust.style.setProperty('--dy',(Math.random()*-200)+'px');
+            document.body.appendChild(dust);
+            setTimeout(()=>dust.remove(),1000);
+        }
+    });
+</script>
+
+</body>
+</html>
